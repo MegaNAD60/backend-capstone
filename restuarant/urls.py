@@ -7,7 +7,7 @@ urlpatterns = [
     path('', views.home, name='home'),
 
 #USER PATH
-    path('user/', views.user, name='user'),
+    path('user', views.user, name='user'),
     path('user/<int:pk>', views.user_detail, name='user-detail'),
 
 #MENU PATH
