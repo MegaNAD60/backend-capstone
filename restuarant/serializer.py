@@ -6,7 +6,15 @@ from .models import *
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ['url', 'username', 'email', 'groups']
+        fields = ['url', 'username', 'email', 'password']
+
+#VALIDATE USERS PASSWORD
+    def create(self, validated_data):
+        user = User.objects.create_user(**validated_data)
+        user.set_password(validated_data['password'])
+        user.save()
+        return user
+
 
 #MENU SERIALIZER
 class MenuSerializer(serializers.ModelSerializer):

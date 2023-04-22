@@ -37,7 +37,7 @@ def user(request):
         serialized_item.save()
         return Response(status.HTTP_201_CREATED)
 
-#SINGLE USERS
+#USER DETAILS
 @api_view()
 def user_detail(request, pk):
      users = get_object_or_404(User, pk=pk)
@@ -46,6 +46,7 @@ def user_detail(request, pk):
 
 #MENU ITEMS
 @api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
 
 #GET ALL MENU ITEMS
 def menuitem(request):
@@ -63,33 +64,37 @@ def menuitem(request):
 
 
 #SINGLE MENU ITEMS
-@api_view(['GET', 'PUT', 'UPDATE', 'DELETE'])
+@api_view(['GET', 'PUT', 'PATCH', 'DELETE'])
 def single_item(request, pk):
      if request.method == 'GET':
-          menu = get_object_or_404(Menu, pk)
+          menu = get_object_or_404(Menu, pk=pk)
           serialized_item = MenuSerializer(menu)
           return Response(serialized_item.data, status.HTTP_200_OK)
 
+#COMPLETE UPDATE OF MENU ITEMS
      if request.method == 'PUT':
-          menu = get_object_or_404(Menu, pk)
+          menu = get_object_or_404(Menu, pk=pk)
           serialized_item = MenuSerializer(menu, data=request.data)
           serialized_item.is_valid(raise_exception=True)
           serialized_item.save()
-          return Response(status.HTTP_201_CREATED)
+          return Response(status.HTTP_200_OK)
 
-     if request.method == 'UPDATE':
-          menu = get_object_or_404(Menu, pk)
+#PARTIAL UPDATE OF MENU ITEMS
+     if request.method == 'PATCH':
+          menu = get_object_or_404(Menu, pk=pk)
           serialized_item = MenuSerializer(menu, data=request.data, partial=True)
           serialized_item.is_valid(raise_exception=True)
           serialized_item.save()
-          return Response(status.HTTP_201_CREATED)
+          return Response(serialized_item.data, status.HTTP_200_OK)
 
+#DELETE MENU ITEMS
      if request.method == 'DELETE':
-          menu = get_object_or_404(Menu, pk)
+          menu = get_object_or_404(Menu, pk=pk)
           menu.delete()
           return Response(status.HTTP_204_NO_CONTENT)
 
+#BOOKING TABLES
 class BookingViewSet(viewsets.ModelViewSet):
      queryset = Bookings.objects.all()
      serializer_class = BookingSerializer
-#     permission_classes = [permissions.IsAuthenticated]
+     permission_classes = [IsAuthenticated]
