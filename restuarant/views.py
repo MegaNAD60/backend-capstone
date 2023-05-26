@@ -7,12 +7,11 @@ from django.core.paginator import Paginator, EmptyPage
 from django.http import *
 
 #REST FRAMEWORK IMPORTS
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes, throttle_classes
 from rest_framework.response import Response
 from rest_framework import status, generics, viewsets
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
-from rest_framework.decorators import permission_classes, throttle_classes
 from rest_framework.throttling import AnonRateThrottle, UserRateThrottle
 
 #local file imports
@@ -25,6 +24,7 @@ def home(request):
 
 #USERS
 @api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
 def user(request):
    if request.method == 'GET':
         users = User.objects.all()
@@ -46,7 +46,6 @@ def user_detail(request, pk):
 
 #MENU ITEMS
 @api_view(['GET', 'POST'])
-@permission_classes([IsAuthenticated])
 
 #GET ALL MENU ITEMS
 def menuitem(request):
