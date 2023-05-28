@@ -52,22 +52,103 @@ tr button a{
 }
 
 .nav {
-  list-style: none;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   color: white;
-  background-color: #495E57;
-  margin-bottom: 1.5rem;
+  padding: 5px 20px;
+  background-color: #0db4f7;
+}
+
+nav .nav-logo{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul li{
+  display: inline-block;
+  list-style: none;
+  justify-content: space-between;
 }
 
 .nav a{
-  display: inline-block;
   padding: 0.5rem;
   font-size: 1.5rem;
   color: white;
   text-decoration: none;
 }
 
-.nav a:hover {
+.nav li a:hover {
   color: rgb(4, 181, 194);
 }
 
+nav button{
+  margin-right: 10px;
+  color: white;
+  background-color: rgb(252, 131, 74, 0.01);
+  border: 1px solid white;
+}
+
+nav button:hover{
+  background-color: rgb(252, 131, 74);
+  border: none;
+}
+
+nav button a:hover{
+  color: white;
+}
+
+/*CONTAINER STYLING*/
+.container{
+  padding: 0 40px;
+}
+
+/*POST MENU STYLING*/
+.post-menu{
+  float: right;
+  margin: 10px 30px;
+}
+
+.post-menu a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/*ABOUT STYLING*/
+.details{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.details p{
+  font-size: 1.3rem;
+}
+
+.details img{
+  width: 100%;
+}
+
+/*MENU DETAILS STYLING*/
+.menu-details-btns{
+  float: right;
+  margin: 10px 30px;
+}
+
+.menu-details-btns a{
+  text-decoration: none;
+  color: white;
+}
+
+.menu-details-btns .edit{
+  margin-right: 10px;
+}
+
+/*FOOTER STYLING*/
+.footer{
+  background-color: #01212e;
+  color: white;
+  padding: 10px;
+  margin-top: auto;
+}

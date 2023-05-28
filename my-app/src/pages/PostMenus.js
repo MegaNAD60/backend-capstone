@@ -1,4 +1,3 @@
-import Nav from "../components/Nav";
 import { useState } from "react";
 
 function PostMenus(){
@@ -29,7 +28,6 @@ function PostMenus(){
 
     return(
         <>
-        <Nav />
         <center>
             <form onSubmit={handleSubmit}>
                 <input

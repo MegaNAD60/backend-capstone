@@ -7,24 +7,36 @@ import Menus from './pages/Menus';
 import PostMenus from './pages/PostMenus';
 import MenuDetails from './pages/MenuDatails';
 import EditMenu from './pages/EditMenu';
+import SignIn from './pages/SignIn';
+import LogIn from './pages/LogIn';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
 //import  ReactDOM from 'react-dom/client';
 
 
 function App() {
-    return (
-     <>
-    <Routes>
-      <Route path="/" element={<Homepage />} />
-      <Route path="/About" element={<About />} />
-      <Route path="/Menus" element={<Menus />} />
-      <Route path="/PostMenus" element={<PostMenus />} />
-      <Route path="/EditMenu" element={<EditMenu />} />
+  return (
+    <div className='App'>
+      <Nav />
 
 
-      <Route path="/MenuDetails/:menuId" element={<MenuDetails />} />
-      <Route path="/EditMenu/:menuId" element={<EditMenu />} />
-    </Routes>
-     </>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Menus" element={<Menus />} />
+        <Route path="/PostMenus" element={<PostMenus />} />
+        <Route path="/EditMenu" element={<EditMenu />} />
+        <Route path="/LogIn" element={<LogIn />} />
+        <Route path="/SignIn" element={<SignIn />} />
+
+
+        <Route path="/MenuDetails/:id" element={<MenuDetails />} />
+        <Route path="/EditMenu/:id" element={<EditMenu />} />
+      </Routes>
+
+      <Footer />
+
+    </div>
   );
 }
 

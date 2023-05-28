@@ -2,13 +2,19 @@ import '../index.css';
 import React from "react";
 import { Link } from "react-router-dom"
 
-function Nav(){
+function Nav() {
     return (
         <nav className="nav">
-            <Link to="/">Home</Link>
-            <Link to="/About">About</Link>
-            <Link to="/Menus">Menu</Link>
-            <Link to="/PostMenus">Post</Link>
+            <div className='nav-logo'>NAD</div>
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/About">About</Link></li>
+                <li><Link to="/Menus">Menu</Link></li>
+            </ul>
+            <div className='reg'>
+                <button><Link to='/SignIn'>Sign In</Link></button>
+                <button><Link to='/LogIn'>Log In</Link></button>
+            </div>
         </nav>
     )
 }

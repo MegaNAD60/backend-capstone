@@ -1,10 +1,43 @@
-import Nav from "../components/Nav";
+
 
 const About = () => {
+
+    const img = require('../images/mario-and-adrian.jpg');
+
+
     return (
         <>
-            <Nav />
-            <h1>About</h1>
+            <div className='container'>
+                <h1>About Us</h1>
+                <section className="details">
+                    <div className="paragraphs">
+                        <p>
+                            Based in Chicago, Illinois, Little Lemon is a family owned Mediterranean
+                            restaurant, focused on traditional recipes served with a modern twist.
+                        </p>
+                        <p>
+                            The chefs draw inspiration from Italian, Grrek, and Turkish culture and have
+                            a menu of 12-15 items that they rotate seasonally.
+                        </p>
+                        <p>
+                            The restaurant has a rustic and relaxed atmosphere with moderate prices, making
+                            it a popular place for a meal any time of the day.
+                        </p>
+                        <p>
+                            Little Lemon is owned by two Italian brothers, Mario and Adrian, who moved to the
+                            United States to pursue their shared dream of owing a restaurant.
+                        </p>
+                        <p>
+                            To craft the menu, Mario relies on family recipes and his experience as a chef in Italy.
+                        </p>
+                        <p>
+                            Adrian does all the marketing for the restaurant and led the effort to expand the menu
+                            beyond classic Italian to incorporate additional cuisines from the mediterranean region.
+                        </p>
+                    </div>
+                    <img src={img} alt='alt="Mario and Adrian'></img>
+                </section>
+            </div>
         </>
     )
 }
