@@ -31,7 +31,7 @@ function App() {
 
 
         <Route path="/MenuDetails/:id" element={<MenuDetails />} />
-        <Route path="/EditMenu/:id" element={<EditMenu />} />
+        <Route path="/EditMenu/:menuid" element={<EditMenu />} />
       </Routes>
 
       <Footer />

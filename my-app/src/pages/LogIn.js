@@ -2,9 +2,26 @@
 const LogIn = () => {
     return (
         <>
-            <h1>Welcome to logged in page</h1>
-        </>
-    )
+            <section className="menu-form">
+                <center>
+                    <form>
+                        <input
+                            type="text"
+                            placeholder="Insert username"
+                            value=''
+                            required
+                        /><br /><br />
+                        <input
+                            type="number"
+                            placeholder="Insert password"
+                            value=''
+                            required
+                        /><br /><br />
+                        <button>Log In</button>
+                    </form>
+                </center>
+            </section>
+        </>    )
 }
 
 export default LogIn;

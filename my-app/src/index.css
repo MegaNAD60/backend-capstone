@@ -51,7 +51,8 @@ tr button a{
   text-decoration: none;
 }
 
-.nav {
+/*NAV.JS STYLING*/
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -60,53 +61,79 @@ tr button a{
   background-color: #0db4f7;
 }
 
-nav .nav-logo{
+.navbar .nav-logo{
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-nav ul li{
+.navbar ul li{
   display: inline-block;
   list-style: none;
   justify-content: space-between;
 }
 
-.nav a{
+.navbar a{
   padding: 0.5rem;
   font-size: 1.5rem;
   color: white;
   text-decoration: none;
 }
 
-.nav li a:hover {
-  color: rgb(4, 181, 194);
+.navbar li a:hover {
+  color: rgb(2, 41, 43);
 }
 
-nav button{
+.navbar button{
   margin-right: 10px;
   color: white;
   background-color: rgb(252, 131, 74, 0.01);
   border: 1px solid white;
 }
 
-nav button:hover{
-  background-color: rgb(252, 131, 74);
+.navbar button:hover{
+  background-color: rgb(2, 41, 43);
   border: none;
 }
 
-nav button a:hover{
+.navbar button a:hover{
   color: white;
 }
+
+/*CARD.JS STYLING*/
+.article{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.article p{
+  font-size: 1.4rem;
+}
+
+.article a{
+  font-size: 1.4rem;
+  color: rgb(252, 104, 46);
+  text-decoration: none;
+}
+
+.article ul li{
+  font-size: 1.4rem;
+}
+
 
 /*CONTAINER STYLING*/
 .container{
   padding: 0 40px;
 }
 
-/*POST MENU STYLING*/
+/*HOMEPAGE STYLING*/
+
+/*POSTMENU.JS STYLING*/
+.menu-form{
+  margin: auto;
+}
+
 .post-menu{
-  float: right;
-  margin: 10px 30px;
+  margin: 10px 0;
 }
 
 .post-menu a{
@@ -115,7 +142,12 @@ nav button a:hover{
   font-size: 1.2rem;
 }
 
-/*ABOUT STYLING*/
+/*EDIT MENU .JS STYLING*/
+.menu-edit-form{
+  margin: auto;
+}
+
+/*ABOUT.JS STYLING*/
 .details{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -130,7 +162,7 @@ nav button a:hover{
   width: 100%;
 }
 
-/*MENU DETAILS STYLING*/
+/*MENUDETAILS.JS STYLING*/
 .menu-details-btns{
   float: right;
   margin: 10px 30px;
@@ -145,10 +177,19 @@ nav button a:hover{
   margin-right: 10px;
 }
 
-/*FOOTER STYLING*/
+/*FOOTER.JS STYLING*/
 .footer{
-  background-color: #01212e;
-  color: white;
-  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #dadcdd;
+  padding: 10px 60px;
   margin-top: auto;
 }
+
+.footer p{
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-top: 1px solid;
+}
+
+

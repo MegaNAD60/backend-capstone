@@ -1,8 +1,9 @@
+import Card from '../components/Card';
 import bgimg from '../images/restaurant_inside.jpg'
 import { Link } from "react-router-dom";
 
 
-function HomePage(){
+function HomePage() {
 
     const hero = {
         backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url(${bgimg})`,
@@ -12,7 +13,7 @@ function HomePage(){
         minHeight: "400px",
         textAlign: "center",
         padding: "0.5rem",
-       }
+    }
 
     const hero_h1 = {
         textShadow: "1px 1px 4px #333333",
@@ -39,6 +40,7 @@ function HomePage(){
         outline: "none",
         textDecoration: "none",
         margin: "1rem",
+        border: "3px solid white"
     }
 
     return (
@@ -50,9 +52,14 @@ function HomePage(){
                 <Link
                     to="#"
                     style={btn}>
-                        Book Now
+                    Book Now
                 </Link>
             </section>
+            <div className='container'>
+                <section className='card-section'>
+                    <Card />
+                </section>
+            </div>
         </>
     )
 }

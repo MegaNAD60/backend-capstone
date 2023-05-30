@@ -11,7 +11,7 @@ function Menus() {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:8000/menu')
+    fetch('http://127.0.0.1:8000/menu')
       .then(response => response.json())
       .then(data => setRecords(data))
       .catch(error => console.error(error))
@@ -23,7 +23,6 @@ function Menus() {
     const { id, title, price, inventory } = item;
     return (
       <tr key={id}>
-        <td>{id}</td>
         <td>{title}</td>
         <td>{price}</td>
         <td>{inventory}</td>
@@ -39,11 +38,13 @@ function Menus() {
         {loading ? 'loading...' : (
           <div className='grid'>
             <h1>Our Menu</h1>
+            <button className='post-menu btn'>
+              <Link to="/PostMenus">Add Menu</Link>
+            </button>
             <center>
               <table>
                 <thead>
                   <tr>
-                    <th>ID</th>
                     <th>TITLE</th>
                     <th>PRICE</th>
                     <th>INVENTORY</th>
@@ -54,9 +55,6 @@ function Menus() {
                   {menurecords}
                 </tbody>
               </table>
-              <button className='post-menu btn'>
-                <Link to="/PostMenus">Add Menu</Link>
-              </button>
             </center>
           </div>
         )}

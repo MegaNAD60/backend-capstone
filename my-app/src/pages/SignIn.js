@@ -1,9 +1,29 @@
 
 
+
 const SignIn = () => {
+
     return (
         <>
-            <h1>Welcome to sign in page</h1>
+            <section className="menu-form">
+                <center>
+                    <form>
+                        <input
+                            type="text"
+                            placeholder="Insert username"
+                            value=''
+                            required
+                        /><br /><br />
+                        <input
+                            type="number"
+                            placeholder="Insert password"
+                            value=''
+                            required
+                        /><br /><br />
+                        <button>Sign In</button>
+                    </form>
+                </center>
+            </section>
         </>
     )
 }

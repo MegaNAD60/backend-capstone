@@ -16,7 +16,7 @@ const About = () => {
                             restaurant, focused on traditional recipes served with a modern twist.
                         </p>
                         <p>
-                            The chefs draw inspiration from Italian, Grrek, and Turkish culture and have
+                            The chefs draw inspiration from Italian, Greek, and Turkish culture and have
                             a menu of 12-15 items that they rotate seasonally.
                         </p>
                         <p>
@@ -35,7 +35,10 @@ const About = () => {
                             beyond classic Italian to incorporate additional cuisines from the mediterranean region.
                         </p>
                     </div>
-                    <img src={img} alt='alt="Mario and Adrian'></img>
+                    <figure>
+                        <img src={img} alt='alt="Mario and Adrian'></img>
+                        <figcaption>Little Lemon owners Mario and Adrian.</figcaption>
+                    </figure>
                 </section>
             </div>
         </>
